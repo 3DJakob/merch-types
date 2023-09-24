@@ -70,4 +70,4 @@ export interface Order<FirebaseTimestamp> {
   userID: string
 }
 
-export const variantListToProducts: (variantList: VariantList, products: Product[]) => ProductWithQuantity[]
+export const variantListToProducts: (products: Product[], variantList?: VariantList) => ProductWithQuantity[]
