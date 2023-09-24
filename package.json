@@ -1,0 +1,19 @@
+{
+  "name": "merch-types",
+  "version": "1.0.0",
+  "description": "This repository contains the typings for merch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3DJakob/merch-types.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "ts-standard": "^12.0.2"
+  }
+}
