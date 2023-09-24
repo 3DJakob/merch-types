@@ -54,7 +54,7 @@ export interface ShopifyOrder {
   }>
 }
 
-export type OrderStatus = 'Waiting' | 'Shipping' | 'Rejected' | 'Fulfilled' | 'Canceled' | 'Received'
+export type OrderStatus = 'waiting' | 'shipping' | 'rejected' | 'fulfilled' | 'canceled' | 'received'
 
 export interface Order<FirebaseTimestamp> {
   addsOwnTrackingInfo: boolean
