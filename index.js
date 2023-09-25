@@ -28,7 +28,7 @@ const variantListToProducts = (products, variantList) => {
       ...originalProduct,
       variants: newVariants.map((variant) => ({
         ...variant,
-        quantity: variantList[variant.id]
+        quantity: variantList[variant.id] == null ? 0 : variantList[variant.id]
       }))
     }
     productsWithQuantity.push(productWithQuantity)
