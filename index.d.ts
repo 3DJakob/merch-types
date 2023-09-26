@@ -67,7 +67,7 @@ export interface Order<FirebaseTimestamp> {
   statusMessage: string
   trackingID: string
   trackingLink: string
-  userID: string
+  placedBy: string
 }
 
 export const variantListToProducts: (products: Product[], variantList?: VariantList) => ProductWithQuantity[]

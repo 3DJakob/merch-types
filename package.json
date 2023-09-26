@@ -1,6 +1,6 @@
 {
   "name": "merch-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This repository contains the typings for merch.",
   "main": "index.js",
   "scripts": {
