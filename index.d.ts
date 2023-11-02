@@ -68,6 +68,7 @@ export interface Order<FirebaseTimestamp> {
   trackingID: string
   trackingLink: string
   placedBy: string
+  shopifyPurchaseOrderLink?: string
 }
 
 export const variantListToProducts: (products: Product[], variantList?: VariantList) => ProductWithQuantity[]
