@@ -54,6 +54,11 @@ export interface ShopifyOrder {
   }>
 }
 
+export interface StockxPrice {
+  sku: string
+  price: number
+}
+
 export type OrderStatus = 'waiting' | 'shipping' | 'rejected' | 'fulfilled' | 'canceled' | 'received'
 
 export interface Order<FirebaseTimestamp> {
