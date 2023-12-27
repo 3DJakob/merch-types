@@ -36,7 +36,7 @@ export interface BaseProduct {
   id: number
   title: string
   vendor: string
-  variants: Variant[]
+  variants: BaseVariant[]
   images: Array<{
     id: number
     src: string
