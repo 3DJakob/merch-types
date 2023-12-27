@@ -43,11 +43,11 @@ export interface BaseProduct {
   }>
 }
 
+// We remove this old price to avoid confusion as it is not stated what price it is
 export interface Variant extends Omit<BaseVariant, 'price'> {
   storePrice: number // The priced shown on this site
   shopifyPrice: number // The price shown on Shopify ie merchsweden.se
   stockxPrice?: number // The price shown on StockX
-  price: undefined // We remove this old price to avoid confusion as it is not stated what price it is
 }
 
 // The type stored in firebase as an extended version of BaseProduct with prices
