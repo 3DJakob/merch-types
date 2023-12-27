@@ -50,6 +50,7 @@ export interface Variant extends Omit<BaseVariant, 'price'> {
   price: undefined // We remove this old price to avoid confusion as it is not stated what price it is
 }
 
+// The type stored in firebase as an extended version of BaseProduct with prices
 export interface Product extends Omit<BaseProduct, 'variants'> {
   variants: Variant[]
 }
