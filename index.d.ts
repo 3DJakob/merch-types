@@ -16,7 +16,7 @@ export interface VariantList {
   [variantID: number]: number
 }
 
-interface Variant {
+interface BaseVariant {
   id: number
   title: string
   price: string
@@ -43,15 +43,15 @@ export interface BaseProduct {
   }>
 }
 
-export interface VariantWithPrices extends Omit<Variant, 'price'> {
+export interface Variant extends Omit<BaseVariant, 'price'> {
   storePrice: number // The priced shown on this site
   shopifyPrice: number // The price shown on Shopify ie merchsweden.se
   stockxPrice?: number // The price shown on StockX
   price: undefined // We remove this old price to avoid confusion as it is not stated what price it is
 }
 
-export interface Product extends Omit<Product, 'variants'> {
-  variants: VariantWithPrices[]
+export interface Product extends Omit<BaseProduct, 'variants'> {
+  variants: Variant[]
 }
 
 export interface ShopifyOrder {
