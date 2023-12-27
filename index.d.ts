@@ -89,3 +89,8 @@ export interface Order<FirebaseTimestamp> {
 }
 
 export const variantListToProducts: (products: Product[], variantList?: VariantList) => ProductWithQuantity[]
+
+export interface PricingModel {
+  multiplier: number
+  additional: number
+}
