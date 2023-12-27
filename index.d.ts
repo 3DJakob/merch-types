@@ -31,7 +31,8 @@ export interface ProductWithQuantity extends Product {
   variants: VariantWithQuantity[]
 }
 
-export interface Product {
+// The type given by Shopify
+export interface BaseProduct {
   id: number
   title: string
   vendor: string
@@ -40,6 +41,17 @@ export interface Product {
     id: number
     src: string
   }>
+}
+
+export interface VariantWithPrices extends Omit<Variant, 'price'> {
+  storePrice: number // The priced shown on this site
+  shopifyPrice: number // The price shown on Shopify ie merchsweden.se
+  stockxPrice?: number // The price shown on StockX
+  price: undefined // We remove this old price to avoid confusion as it is not stated what price it is
+}
+
+export interface Product extends Omit<Product, 'variants'> {
+  variants: VariantWithPrices[]
 }
 
 export interface ShopifyOrder {
