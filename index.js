@@ -7,10 +7,10 @@ const variantListToProducts = (products, variantList) => {
     // check if already added product
     const addedProduct = productsWithQuantity.find((product) => product.variants.find((variant) => variant.id === parseInt(variantID)))
     if (addedProduct != null) {
-      // add quantity to existing product variant
+      // update quantity to existing product variant (we want to use list quantity, product quantity)
       addedProduct.variants.map(v => {
         if (v.id === parseInt(variantID)) {
-          v.quantity += variantList[variantID]
+          v.quantity = variantList[variantID]
         }
         return v
       })
