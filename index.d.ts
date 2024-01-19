@@ -99,4 +99,5 @@ export const variantListToProducts: (products: Product[], variantList?: VariantL
 export interface PricingModel {
   additional: number
   multiplier: number
+  conversionEuro: number
 }
