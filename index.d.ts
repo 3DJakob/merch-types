@@ -1,8 +1,11 @@
+type currency = 'SEK' | 'EUR'
+
 export interface UserRecord {
   address: string
   cart?: VariantList
   city: string
   country: string
+  currency: currency
   email: string
   iban: string
   id?: string
@@ -76,7 +79,9 @@ export type OrderStatus = 'waiting' | 'shipping' | 'rejected' | 'fulfilled' | 'c
 
 export interface Order<FirebaseTimestamp> {
   addsOwnTrackingInfo: boolean
+  conversionRate: number
   createdAt: FirebaseTimestamp
+  currency: currency
   id: string
   paymentAt: string | null
   placedBy: string
