@@ -45,6 +45,7 @@ export interface BaseProduct {
   variants: BaseVariant[]
   vendor: string
   sku: string
+  tags: string
 }
 
 // We remove this old price to avoid confusion as it is not stated what price it is
