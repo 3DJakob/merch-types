@@ -7,6 +7,7 @@ export interface UserRecord {
   country: string
   currency: currency
   email: string
+  facebookLink: string
   iban: string
   id?: string
   name: string
