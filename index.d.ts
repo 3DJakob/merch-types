@@ -16,23 +16,13 @@ export interface UserRecord {
   role: string
 }
 
-export interface VariantList {
-  [variantID: number]: number
-}
+export type VariantList = Array<string> // List of unique variant ids
 
 interface BaseVariant {
   id: number
   price: string
   sku: string
   title: string
-}
-
-interface VariantWithQuantity extends Variant {
-  quantity: number
-}
-
-export interface ProductWithQuantity extends Product {
-  variants: VariantWithQuantity[]
 }
 
 // The type given by Shopify
@@ -56,9 +46,15 @@ export interface Variant extends Omit<BaseVariant, 'price'> {
   storePrice: number // The priced shown on this site
 }
 
+export interface UniqueVariant extends Variant {
+  preOrderID: string // The id of the preOrder that caused this variant to be created
+  preOrderIndex: number // The index of the variant in the preOrder. I.e if two of the same variant was ordered the first would have index 0 and the second 1
+  uniqueID: string // The unique id of the variant `${variantID}-${preOrderID}-${preOrderIndex}`
+}
+
 // The type stored in firebase as an extended version of BaseProduct with prices
 export interface Product extends Omit<BaseProduct, 'variants'> {
-  variants: Variant[]
+  variants: UniqueVariant[]
 }
 
 export interface ShopifyOrder {
@@ -88,7 +84,7 @@ export interface Order<FirebaseTimestamp> {
   id: string
   paymentAt: string | null
   placedBy: string
-  products: ProductWithQuantity[]
+  products: Product[] // The variants are unique. We track what variant comes from what pre-order there we need duplicate variants instead of quantity prop
   reference: string
   shopifyPurchaseOrderLink?: string
   status: OrderStatus
@@ -97,7 +93,7 @@ export interface Order<FirebaseTimestamp> {
   trackingLink: string
 }
 
-export const variantListToProducts: (products: Product[], variantList?: VariantList) => ProductWithQuantity[]
+export const variantListToProducts: (products: Product[], variantList?: VariantList) => Product[]
 
 export interface PricingModel {
   additional: number
