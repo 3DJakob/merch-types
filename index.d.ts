@@ -47,7 +47,7 @@ export interface Variant extends Omit<BaseVariant, 'price'> {
 }
 
 export interface UniqueVariant extends Variant {
-  preOrderID: string // The id of the preOrder that caused this variant to be created
+  preOrderID: number // The id of the preOrder that caused this variant to be created
   preOrderIndex: number // The index of the variant in the preOrder. I.e if two of the same variant was ordered the first would have index 0 and the second 1
   uniqueID: string // The unique id of the variant `${variantID}-${preOrderID}-${preOrderIndex}`
 }
