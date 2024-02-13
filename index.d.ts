@@ -54,6 +54,10 @@ export interface UniqueVariant extends Variant {
 
 // The type stored in firebase as an extended version of BaseProduct with prices
 export interface Product extends Omit<BaseProduct, 'variants'> {
+  variants: Variant[]
+}
+
+export interface ProductWithUniqueVariants extends Omit<BaseProduct, 'variants'> {
   variants: UniqueVariant[]
 }
 
@@ -84,7 +88,7 @@ export interface Order<FirebaseTimestamp> {
   id: string
   paymentAt: string | null
   placedBy: string
-  products: Product[] // The variants are unique. We track what variant comes from what pre-order there we need duplicate variants instead of quantity prop
+  products: ProductWithUniqueVariants // The variants are unique. We track what variant comes from what pre-order there we need duplicate variants instead of quantity prop
   reference: string
   shopifyPurchaseOrderLink?: string
   status: OrderStatus
@@ -93,7 +97,7 @@ export interface Order<FirebaseTimestamp> {
   trackingLink: string
 }
 
-export const variantListToProducts: (products: Product[], variantList?: VariantList) => Product[]
+export const variantListToProducts: (products: ProductWithUniqueVariants[], variantList?: VariantList) => Product[]
 
 export interface PricingModel {
   additional: number
