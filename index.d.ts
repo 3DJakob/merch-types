@@ -97,7 +97,7 @@ export interface Order<FirebaseTimestamp> {
   trackingLink: string
 }
 
-export const variantListToProducts: (products: ProductWithUniqueVariants[], variantList?: VariantList) => Product[]
+export const variantListToProducts: (products: ProductWithUniqueVariants[], variantList?: VariantList) => ProductWithUniqueVariants[]
 
 export interface PricingModel {
   additional: number
