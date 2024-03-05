@@ -45,13 +45,13 @@ export interface BaseProduct {
 export interface Variant extends Omit<BaseVariant, 'price'> {
   shopifyPrice: number // The price shown on Shopify ie merchsweden.se
   stockxPrice?: number // The price shown on StockX
-  // storePrice: number // The priced shown on this site
 }
 
 export interface UniqueVariant extends Variant {
   preOrderID: number // The id of the preOrder that caused this variant to be created
   preOrderIndex: number // The index of the variant in the preOrder. I.e if two of the same variant was ordered the first would have index 0 and the second 1
   uniqueID: string // The unique id of the variant `${variantID}-${preOrderID}-${preOrderIndex}`
+  storePrice: number // The price shown on this site
 }
 
 // The type stored in firebase as an extended version of BaseProduct with prices
