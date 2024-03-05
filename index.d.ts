@@ -16,7 +16,9 @@ export interface UserRecord {
   role: string
 }
 
-export type VariantList = Array<string> // List of unique variant ids
+export interface VariantList {
+  [variantID: number]: number
+}
 
 interface BaseVariant {
   id: number
@@ -43,7 +45,7 @@ export interface BaseProduct {
 export interface Variant extends Omit<BaseVariant, 'price'> {
   shopifyPrice: number // The price shown on Shopify ie merchsweden.se
   stockxPrice?: number // The price shown on StockX
-  storePrice: number // The priced shown on this site
+  // storePrice: number // The priced shown on this site
 }
 
 export interface UniqueVariant extends Variant {
@@ -96,8 +98,6 @@ export interface Order<FirebaseTimestamp> {
   trackingID: string
   trackingLink: string
 }
-
-export const variantListToProducts: (products: ProductWithUniqueVariants[], variantList?: VariantList) => ProductWithUniqueVariants[]
 
 export interface PricingModel {
   additional: number
