@@ -13,6 +13,7 @@ export interface UserRecord {
   name: string
   phone: string
   postalcode: string
+  verified?: boolean
 }
 
 export interface VariantList {
