@@ -13,7 +13,6 @@ export interface UserRecord {
   name: string
   phone: string
   postalcode: string
-  role: string
 }
 
 export interface VariantList {
