@@ -65,6 +65,7 @@ export interface ProductWithUniqueVariants extends Omit<BaseProduct, 'variants'>
 }
 
 export interface ShopifyOrder {
+  created_at: string
   currency: string
   current_subtotal_price: string
   id: number
