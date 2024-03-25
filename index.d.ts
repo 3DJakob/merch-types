@@ -48,10 +48,11 @@ export interface Variant extends Omit<BaseVariant, 'price'> {
 }
 
 export interface UniqueVariant extends Variant {
+  preOrderDate: string // The date of the preOrder
   preOrderID: number // The id of the preOrder that caused this variant to be created
   preOrderIndex: number // The index of the variant in the preOrder. I.e if two of the same variant was ordered the first would have index 0 and the second 1
-  uniqueID: string // The unique id of the variant `${variantID}-${preOrderID}-${preOrderIndex}`
   storePrice: number // The price shown on this site
+  uniqueID: string // The unique id of the variant `${variantID}-${preOrderID}-${preOrderIndex}`
 }
 
 // The type stored in firebase as an extended version of BaseProduct with prices
