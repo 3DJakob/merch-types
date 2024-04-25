@@ -82,7 +82,7 @@ export interface StockxPrice {
   sku: string
 }
 
-export type OrderStatus = 'waiting' | 'shipping' | 'rejected' | 'fulfilled' | 'canceled' | 'received'
+export type OrderStatus = 'waiting' | 'accepted' | 'shipping' | 'rejected' | 'fulfilled' | 'canceled' | 'received'
 
 export interface Order<FirebaseTimestamp> {
   addsOwnTrackingInfo: boolean
