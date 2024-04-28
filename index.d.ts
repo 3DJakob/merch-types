@@ -89,6 +89,7 @@ export interface Order<FirebaseTimestamp> {
   conversionRate: number
   createdAt: FirebaseTimestamp
   currency: currency
+  history: OrderEdit<FirebaseTimestamp>[]
   id: string
   paymentAt: string | null
   placedBy: string
@@ -105,4 +106,12 @@ export interface PricingModel {
   additional: number
   multiplier: number
   conversionEuro: number
+}
+
+// For now we only track changes to the status
+export interface OrderEdit<FirebaseTimestamp> {
+  editedAt: FirebaseTimestamp
+  field: 'status'
+  editedBy: string
+  newValue: OrderStatus
 }
