@@ -112,6 +112,5 @@ export interface PricingModel {
 export interface OrderEdit<FirebaseTimestamp> {
   editedAt: FirebaseTimestamp
   field: 'status'
-  editedBy: string
   newValue: OrderStatus
 }
