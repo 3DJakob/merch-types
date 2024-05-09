@@ -96,6 +96,7 @@ export interface Order<FirebaseTimestamp> {
   products: ProductWithUniqueVariants[] // The variants are unique. We track what variant comes from what pre-order there we need duplicate variants instead of quantity prop
   reference: string
   shopifyPurchaseOrderLink?: string
+  shopifyPurchaseOrderNumber?: string
   status: OrderStatus
   statusMessage: string
   trackingID: string
