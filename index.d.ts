@@ -117,9 +117,8 @@ export interface PricingModel {
   conversionEuro: number;
 }
 
-// Used for data not present in the Shopify product object
+// Used for data not present in the Shopify product object only exposed to admins
 export interface AditionalVariantData<FirebaseTimestamp> {
-  price?: number; // Overrides the final price
   stockXID?: string; // Used to get the buy price from StockX
   stockXLowestAskAmount?: number; // The price shown on StockX
   stockXUpdateAt?: FirebaseTimestamp; // The date the price was fetched
