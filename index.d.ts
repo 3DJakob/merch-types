@@ -158,3 +158,37 @@ interface StockXPrice {
 
 type StockXPriceResponse = StockXPrice[]
 
+
+interface StockXSize {
+  size: string
+  type: 'us m' | 'us w' | 'uk' | 'eu' | 'cm' | 'kr'
+}
+
+interface StockXSizeChart {
+  availableConversions: StockXSize[]
+  defaultConversion: StockXSize
+}
+
+interface StockXVariant {
+  productId: string
+  sizeChart: StockXSizeChart
+  variantId: string
+  variantName: string
+  variantValue: string
+}
+
+type StockXVariantResponse = StockXVariant[]
+
+interface StockXVariantBuyRates {
+  sizeNames: StockXSize[]
+  id: string
+  currencyCode: string
+  highestBidAmount: string | null
+  lowestAskAmount: string | null
+}
+
+// Used to store additional data about a product for now only StockX data
+interface AdditionalProductData {
+  stockXID: string
+  stockXVariantBuyRates: StockXVariantBuyRates[]
+}
