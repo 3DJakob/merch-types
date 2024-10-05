@@ -44,7 +44,6 @@ export interface BaseProduct {
 // We remove this old price to avoid confusion as it is not stated what price it is
 export interface Variant extends Omit<BaseVariant, "price"> {
   shopifyPrice: number; // The price shown on Shopify ie merchsweden.se
-  stockxPrice?: number; // The price shown on StockX
 }
 
 export interface UniqueVariant extends Variant {
