@@ -130,3 +130,32 @@ export interface OrderEdit<FirebaseTimestamp> {
   field: "status";
   newValue: OrderStatus;
 }
+
+// StockX API
+
+interface StockXProduct {
+  productId: string
+  brand: string
+  productType: string
+  styleId: string
+  urlKey: string
+  title: string
+}
+
+interface StockXSearchResponse {
+  count: number
+  hasNextPage: boolean
+  pageNumber: number
+  pageSize: number
+  products: StockXProduct[]
+}
+
+interface StockXPrice {
+  currencyCode: string
+  highestBidAmount: string | null
+  lowestAskAmount: string | null
+  variantId: string
+}
+
+type StockXPriceResponse = StockXPrice[]
+
