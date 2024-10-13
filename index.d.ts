@@ -188,7 +188,8 @@ interface StockXVariantBuyRates {
 }
 
 // Used to store additional data about a product for now only StockX data
-interface AdditionalProductData {
+interface AdditionalProductData<FirebaseTimestamp> {
   stockXID: string
   stockXVariantBuyRates: StockXVariantBuyRates[]
+  stockXUpdateAt?: FirebaseTimestamp; // The date the price was fetched
 }
