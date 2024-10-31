@@ -114,6 +114,8 @@ export interface PricingModel {
   additional: number;
   multiplier: number;
   conversionEuro: number;
+  stockXProcessingFee: number;
+  stockXShippingFee: number;
 }
 
 // Used for data not present in the Shopify product object only exposed to admins
