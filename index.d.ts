@@ -60,8 +60,8 @@ export interface Product extends Omit<BaseProduct, "variants"> {
 }
 
 export interface ProductWithUniqueVariants
-  extends Omit<BaseProduct, "variants"> {
-  variants: UniqueVariant[];
+  extends BaseProduct {
+    preOrderedVariants: UniqueVariant[];
 }
 
 export interface ShopifyOrder {
