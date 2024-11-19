@@ -62,6 +62,7 @@ export interface Product extends Omit<BaseProduct, "variants"> {
 export interface ProductWithUniqueVariants
   extends BaseProduct {
     preOrderedVariants: UniqueVariant[];
+    includesPreOrderedVariants: boolean; // Used for querying
 }
 
 export interface ShopifyOrder {
